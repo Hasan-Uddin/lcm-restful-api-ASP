@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: lcm_api
+    name: lcm-restful-api
     env: docker
     dockerfilePath: Dockerfile
     plan: free
