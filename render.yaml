@@ -1,8 +1,6 @@
 services:
   - type: web
-    name: lcm-restful-api-ASP
-    env: dotnet
-    buildCommand: "dotnet publish -c Release -o out"
-    startCommand: "dotnet out/LCMApi.dll"
-    publishDir: out
+    name: lcm_api
+    env: docker
+    dockerfilePath: Dockerfile
     plan: free
