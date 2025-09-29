@@ -11,7 +11,7 @@ var app = builder.Build();
 app.MapControllers();
 app.Run();
 
-// Controller must be outside Program.cs in the same project or defined below
+// Controllers
 [ApiController]
 [Route("lcm/abcnizamd_gmail_com")]
 public class LCMController : ControllerBase
