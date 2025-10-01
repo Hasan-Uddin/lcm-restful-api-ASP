@@ -11,21 +11,30 @@ var app = builder.Build();
 app.MapControllers();
 app.Run();
 
-// Controller must be outside Program.cs in the same project or defined below
 [ApiController]
 [Route("lcm/abcnizamd_gmail_com")]
 public class LCMController : ControllerBase
 {
     [HttpGet]
-    public IActionResult GetLCM([FromQuery] int x, [FromQuery] int y)
+    public IActionResult GetLCM([FromQuery] string x, [FromQuery] string y)
     {
-        if (x <= 0 || y <= 0)
+        if (!IsNaturalNumber(x, out int xVal) || !IsNaturalNumber(y, out int yVal))
         {
-            return Content("NaN", "text/plain");
+            return Content("NaN");
         }
 
-        int lcm = LCM(x, y);
-        return Content(lcm.ToString(), "text/plain");
+        int lcm = LCM(xVal, yVal);
+        return Content(lcm.ToString());
+    }
+
+    private bool IsNaturalNumber(string input, out int value)
+    {
+        if (int.TryParse(input, out value) && value > 0)
+        {
+            return true;
+        }
+        value = -1;
+        return false;
     }
 
     private int LCM(int a, int b) => (a * b) / GCD(a, b);

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lcm-restful-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84d6a65adb85b2600327a383ac6ba716fef8413c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4750c28ba226ffdbbacc64d09fc2d481cf057a94")]
 [assembly: System.Reflection.AssemblyProductAttribute("lcm-restful-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lcm-restful-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
