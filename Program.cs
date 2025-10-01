@@ -12,7 +12,7 @@ app.MapControllers();
 app.Run();
 
 [ApiController]
-[Route("lcm/abcnizamd_gmail_com")]
+[Route("abcnizamd_gmail_com")]
 public class LCMController : ControllerBase
 {
     [HttpGet]
