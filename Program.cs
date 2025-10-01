@@ -11,6 +11,10 @@ var app = builder.Build();
 app.MapControllers();
 app.Run();
 
+<<<<<<< HEAD
+=======
+// Controllers
+>>>>>>> de70d3c4f63adb95232bca80fd58b6e7cf1bd33c
 [ApiController]
 [Route("lcm/abcnizamd_gmail_com")]
 public class LCMController : ControllerBase
