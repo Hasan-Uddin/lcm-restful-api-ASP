@@ -23,7 +23,7 @@ public class LCMController : ControllerBase
             return Content("NaN", "text/plain");
         }
 
-        ulong lcm = (ulong)LCM((ulong)xVal, (ulong)yVal);
+        double lcm = LCM(xVal, yVal);
         return Content(lcm.ToString(), "text/plain");
     }
 
@@ -37,16 +37,16 @@ public class LCMController : ControllerBase
         return false;
     }
 
-    private ulong LCM(ulong a, ulong b) => ((a * b) / GCD(a, b));
+    private double LCM(double a, double b) => ((a * b) / GCD(a, b));
 
-    private ulong GCD(ulong a, ulong b)
+    private double GCD(double a, double b)
     {
         while (b != 0)
         {
-            ulong temp = b;
+            double temp = b;
             b = a % b;
             a = temp;
         }
-        return (ulong)a;
+        return (double)a;
     }
 }
