@@ -12,11 +12,11 @@ app.MapControllers();
 app.Run();
 
 [ApiController]
-[Route("abcnizamd_gmail_com")]
+[Route("lcm/abcnizamd_gmail_com")]
 public class LCMController : ControllerBase
 {
     [HttpGet]
-    public IActionResult GetLCM([FromQuery] string x, [FromQuery] string y)
+    public IActionResult GetLCM([FromQuery] string x = "", [FromQuery] string y = "")
     {
         if (!IsNaturalNumber(x, out int xVal) || !IsNaturalNumber(y, out int yVal))
         {
