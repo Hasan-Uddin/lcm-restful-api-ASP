@@ -19,18 +19,18 @@ public class LCMController : ControllerBase
     [HttpGet]
     public IActionResult GetLCM([FromQuery] string x = "", [FromQuery] string y = "")
     {
-        if (!IsNaturalNumber(x, out double xVal) || !IsNaturalNumber(y, out double yVal))
+        if (!IsNaturalNumber(x, out BigInteger xVal) || !IsNaturalNumber(y, out BigInteger yVal))
         {
             return Content("NaN", "text/plain");
         }
 
-        double lcm = LCM(xVal, yVal);
-        return Content(lcm.ToString(), "text/plain");
+        BigInteger lcm = LCM(xVal, yVal);
+        return Content(((double)lcm).ToString(), "text/plain");
     }
 
-    private static bool IsNaturalNumber(string input, out double value)
+    private static bool IsNaturalNumber(string input, out BigInteger value)
     {
-        if (double.TryParse(input, out value) && value > 0)
+        if (BigInteger.TryParse(input, out value) && value > 0)
         {
             return true;
         }
@@ -38,16 +38,16 @@ public class LCMController : ControllerBase
         return false;
     }
 
-    private double LCM(double a, double b) => ((a * b) / GCD(a, b));
+    private BigInteger LCM(BigInteger a, BigInteger b) => ((a * b) / GCD(a, b));
 
-    private double GCD(double a, double b)
+    private BigInteger GCD(BigInteger a, BigInteger b)
     {
         while (b != 0)
         {
-            double temp = b;
+            BigInteger temp = b;
             b = a % b;
             a = temp;
         }
-        return (double)a;
+        return (BigInteger)a;
     }
 }
