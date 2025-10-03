@@ -25,10 +25,10 @@ public class LCMController : ControllerBase
         }
 
         BigInteger lcm = LCM(xVal, yVal);
-        return Content(((double)lcm).ToString(), "text/plain");
+        return Content((lcm).ToString(), "text/plain");
     }
 
-    private static bool IsNaturalNumber(string input, out BigInteger value)
+    private bool IsNaturalNumber(string input, out BigInteger value)
     {
         if (BigInteger.TryParse(input, out value) && value > 0)
         {
